@@ -1,0 +1,12 @@
+# Node (React Native)
+node_modules/
+.expo/
+.expo-shared/
+
+# Python
+__pycache__/
+venv/
+*.pyc
+
+# OS
+.DS_Store
