@@ -1,15 +1,18 @@
-import { Text, View } from "react-native";
+import { View, Text, StyleSheet } from 'react-native';
+import CryptoList from './components/CryptoList';
+import Colors from '../constants/colours';
 
-export default function Index() {
+export default function HomeScreen() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+    <View style={styles.container}>
+      <CryptoList />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.primary,
+  },
+});
