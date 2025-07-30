@@ -1,12 +1,45 @@
-# Node (React Native)
+# Node (frontend React Native)
 node_modules/
-.expo/
-.expo-shared/
+frontend/.expo/
+frontend/.expo-shared/
+frontend/dist/
+frontend/web-build/
+frontend/expo-env.d.ts
 
+<<<<<<< HEAD
 # Python
 __pycache__/
 venv/
 *.pyc
+=======
+# Native
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+>>>>>>> 9639738 (backend and universal gitignore)
 
-# OS
+# Metro
+.metro-health-check*
+
+# debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# macOS
 .DS_Store
+*.pem
+
+# Python (backend Flask or FastAPI)
+__pycache__/
+*.pyc
+backend/venv/
+backend/.env
+
+# General
+.DS_Store
+.env   
