@@ -19,8 +19,9 @@ def crypto_info(symbol: str):
 
 @app.get("/crypto/{symbol}/report")
 def crypto_report(symbol: str):
-    price_data = get_crypto_data(symbol)
-    report = generate_report(symbol, price_data)
+    indicator_data = get_indicator_data(symbol)
+    decision = get_buy_signal(indicator_data)
+    report = generate_report(symbol, indicator_data=indicator_data, decision=decision)
     return {
         "symbol": symbol,
         "report": report
