@@ -13,39 +13,21 @@ client = RESTClient(API_KEY)
     
 
 
-def get_indicator_data(symbol: str, timespan="minute"):
+def get_indicator_data(symbol: str, timespan="hour"):
 
     ticker = f'X:{symbol.upper()}USD'
 
     # Fetch indicators
-    ema_data = client.get_ema(ticker=ticker, timespan=timespan, window=20, series_type="close", order="desc", limit=1)
-    today = datetime.now()
-    yesterday = today - timedelta(days=1)
+    rsi_data = client.get_rsi(ticker=ticker, timespan=timespan, window=14, series_type="close", order="desc", limit=1)
 
-    snapshot_data = []
-    for a in client.list_aggs(
-        ticker,
-        1,
-        "minute",
-        yesterday,
-        today,
-        adjusted="true",
-        sort="desc",
-        limit=2,
-    ):
-        snapshot_data.append(a)
 
     # Extract latest values
-    ema_value = ema_data.values[0].value
-    latest_price = snapshot_data[0].results[0].c
-    
-    
+    rsi_value = rsi_data.values[0].value
 
 
 
     # Return structured result
     return {
         "ticker": ticker,
-        "ema": ema_value,
-        "price": latest_price
+        "rsi": rsi_value
     }
