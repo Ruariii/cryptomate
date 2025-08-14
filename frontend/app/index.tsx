@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet } from 'react-native';
-import CryptoList from './components/CryptoList';
+import { useFonts } from 'expo-font';
 import Colors from '../constants/colours';
+import CryptoReport from './components/CryptoReport';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <CryptoList />
+      <CryptoReport />
     </View>
   );
 }
