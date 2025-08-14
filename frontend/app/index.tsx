@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet } from 'react-native';
+import { useFonts } from 'expo-font';
 import Colors from '../constants/colours';
-import CryptoReportScreen from './components/CryptoReport';
+import CryptoReport from './components/CryptoReport';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <CryptoReportScreen />
+      <CryptoReport />
     </View>
   );
 }

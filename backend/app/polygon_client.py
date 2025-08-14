@@ -13,7 +13,7 @@ client = RESTClient(API_KEY)
     
 
 
-def get_indicator_data(symbol: str, timespan="hour"):
+def get_indicator_data(symbol: str, timespan="minute"):
 
     ticker = f'X:{symbol.upper()}USD'
 
